@@ -1,0 +1,16 @@
+Priorité : haute
+-------------------
+
+- liste des tâches (de l'endroit pertinent ? genre liste des taches de bxl si l'utilisateur est à bxl)
+- créer / modifier / archiver tâche
+- s'assigner à une tâche
+- changer le statut d'une tâche (marquer comme fini par exemple)
+
+
+Priorité : moyen
+----------------
+
+- possibilité de trier les tâches par priorité, type, deadline, ...
+- possibilité de filtrer les tâches par entreprise, role, priorité, type, ...
+- changer la priorité d'une tâche
+- login
