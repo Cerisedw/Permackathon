@@ -14,6 +14,7 @@ namespace Pangathon.Api.Tools
         {
             return new UtilisateurView()
             {
+                Id = System.Guid.NewGuid(),
                 Nom = "Pikachu",
                 Prenom = "Michael",
                 Email = "Mike@charleroi.com",

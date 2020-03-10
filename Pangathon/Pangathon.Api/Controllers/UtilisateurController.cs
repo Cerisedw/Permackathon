@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Pangathon.Api.Tools;
 using Pangathon.Api.Tools.Entities;
+using Pangathon.DAL.Interfaces;
 
 namespace Pangathon.Api.Controllers
 {
@@ -13,32 +14,32 @@ namespace Pangathon.Api.Controllers
     [ApiController]
     public class UtilisateurController : ControllerBase
     {
+        private readonly IUnitOfWork _unitOfWork;
 
-        public UtilisateurView Get()
+        public UtilisateurController(IUnitOfWork unitOfWork)
         {
-            UtilisateurView utilisateur = UtilisateurTools.GenerateUtView();
+            _unitOfWork = unitOfWork;
+        }
+
+        [HttpGet("{idUtilisateur}")]
+        public UtilisateurView Get(Guid idUtilisateur)
+        {
+            UtilisateurView utilisateur = UtilisateurTools.UtToUtV(_unitOfWork.UtilisateurRepository.GetById(idUtilisateur));
             return utilisateur;
         }
 
         [HttpGet("getall")]
         public List<UtilisateurView> GetAll()
         {
-            List<UtilisateurView> listeUtilisateur = new List<UtilisateurView>();
-            for (int i = 0; i < 4; i++)
-            {
-                listeUtilisateur.Add(UtilisateurTools.GenerateUtView());
-            }
+            List<UtilisateurView> listeUtilisateur = UtilisateurTools.listTolistV(_unitOfWork.UtilisateurRepository.Get().ToList());
+            
             return listeUtilisateur;
         }
 
-        [HttpGet("nom/{paramsNom}")]
+        [HttpGet("getall/nom/{paramsNom}")]
         public List<UtilisateurView> FilterByNom(string paramsNom)
         {
-            List<UtilisateurView> listeUtilisateur = new List<UtilisateurView>();
-            for (int i = 0; i < 4; i++)
-            {
-                listeUtilisateur.Add(UtilisateurTools.GenerateUtView());
-            }
+            List<UtilisateurView> listeUtilisateur = UtilisateurTools.listTolistV(_unitOfWork.UtilisateurRepository.Get().ToList());
             List<UtilisateurView> newList = listeUtilisateur.Where(x => x.Nom == paramsNom).ToList();
             return newList;
 

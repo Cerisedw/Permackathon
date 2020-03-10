@@ -11,6 +11,7 @@ namespace Pangathon.Api.Tools.Entities
         private string _nom;
         private string _telephone;
         private string _description;
+        private AdresseView _adresse;
 
         public string Nom
         {
@@ -48,6 +49,19 @@ namespace Pangathon.Api.Tools.Entities
             set
             {
                 _description = value;
+            }
+        }
+
+        public AdresseView Adresse
+        {
+            get
+            {
+                return _adresse;
+            }
+
+            set
+            {
+                _adresse = value;
             }
         }
     }

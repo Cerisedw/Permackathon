@@ -37,25 +37,6 @@ namespace Pangathon.Api.Controllers
             return listeTaches;
         }
 
-        //[HttpGet("type/{paramsType}")]
-        //public List<TacheView> FilterByTypeNom([FromQuery]string paramsType)
-        //{
-        //    List<TacheView> listeTaches = new List<TacheView>();
-        //    for (int i = 0; i < 3; i++)
-        //    {
-        //        if (i == 2)
-        //        {
-        //            TacheView t = TacheTools.GenerateTacheView();
-        //            t.Type = new TypeView() { Nom = "Something" };
-        //            listeTaches.Add(t);
-        //        }
-        //        else
-        //        {
-        //            listeTaches.Add(TacheTools.GenerateTacheView());
-        //        }
-        //    }
-        //    return listeTaches.Where(x=>x.Type.Nom == paramsType).ToList();
-        //}
 
         [HttpGet("order/priorite")]
         public List<TacheView> OrderByPriorite ()

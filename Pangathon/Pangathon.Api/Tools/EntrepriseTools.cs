@@ -27,8 +27,19 @@ namespace Pangathon.Api.Tools
                 Nom = e.Nom,
                 Telephone = e.Telephone,
                 Description = e.Description,
-                //Adresse = e.Adresse
+                Adresse = AdresseTools.AdrToAdrV(e.Adresse)
             };
+        }
+
+
+        public static List<EntrepriseView> listToListV(List<Entreprise> le)
+        {
+            List<EntrepriseView> lev = new List<EntrepriseView>();
+            foreach(Entreprise e in le)
+            {
+                lev.Add(EnToEnV(e));
+            }
+            return lev;
         }
 
     }
