@@ -19,5 +19,15 @@ namespace Pangathon.Api.Tools
             };
         }
 
+        public static List<PrioriteView> listToListV(IEnumerable<Priorite> lp)
+        {
+            List<PrioriteView> lpv = new List<PrioriteView>();
+            foreach(Priorite p in lp)
+            {
+                lpv.Add(PrioToPrioV(p));
+            }
+            return lpv;
+        }
+
     }
 }

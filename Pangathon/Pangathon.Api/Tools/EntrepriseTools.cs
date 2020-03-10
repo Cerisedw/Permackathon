@@ -24,6 +24,7 @@ namespace Pangathon.Api.Tools
         {
             return new EntrepriseView()
             {
+                Id = e.Id,
                 Nom = e.Nom,
                 Telephone = e.Telephone,
                 Description = e.Description,

@@ -19,5 +19,15 @@ namespace Pangathon.Api.Tools
             };
         }
 
+        public static List<TypeView> listToListV(IEnumerable<TypeTache> ltt)
+        {
+            List<TypeView> listeTv = new List<TypeView>();
+            foreach(TypeTache t in ltt)
+            {
+                listeTv.Add(tToTV(t));
+            }
+            return listeTv;
+        }
+
     }
 }

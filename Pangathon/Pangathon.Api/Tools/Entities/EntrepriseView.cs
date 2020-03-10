@@ -8,6 +8,7 @@ namespace Pangathon.Api.Tools.Entities
     public class EntrepriseView
     {
 
+        private Guid _id;
         private string _nom;
         private string _telephone;
         private string _description;
@@ -62,6 +63,19 @@ namespace Pangathon.Api.Tools.Entities
             set
             {
                 _adresse = value;
+            }
+        }
+
+        public Guid Id
+        {
+            get
+            {
+                return _id;
+            }
+
+            set
+            {
+                _id = value;
             }
         }
     }
