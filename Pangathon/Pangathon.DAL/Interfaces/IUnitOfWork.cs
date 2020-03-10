@@ -9,6 +9,7 @@ namespace Pangathon.DAL.Interfaces
         IGenericRepository<Commentaire, Guid> CommentaireRepository { get; }
         IGenericRepository<Entreprise, Guid> EntrepriseRepository { get; }
         IGenericRepository<Poste, Guid> PosteRepository { get; }
+        IGenericRepository<Priorite, Guid> PrioriteRepository { get; }
         IGenericRepository<Role, Guid> RoleRepository { get; }
         IGenericRepository<Statut, Guid> StatutRepository { get; }
         IGenericRepository<Tache, Guid> TacheRepository { get; }

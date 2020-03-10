@@ -68,6 +68,7 @@ namespace Pangathon.DAL
         public DbSet<Entreprise> Entreprises { get; set; }
         public DbSet<Participant> Participants { get; set; }
         public DbSet<Poste> Postes { get; set; }
+        public DbSet<Priorite> Priorites { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<Statut> Statuts { get; set; }
         public DbSet<Tache> Taches { get; set; }

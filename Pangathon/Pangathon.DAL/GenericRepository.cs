@@ -1,12 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Pangathon.DAL;
 using Pangathon.DAL.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace Archivext.DataLayer
+namespace Pangathon.DAL
 {
     public class GenericRepository<TEntity, TIdType> : IGenericRepository<TEntity, TIdType> where TEntity : class, IEntity<TIdType>
     {

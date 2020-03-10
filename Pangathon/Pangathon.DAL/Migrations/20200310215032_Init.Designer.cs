@@ -10,8 +10,8 @@ using Pangathon.DAL;
 namespace Pangathon.DAL.Migrations
 {
     [DbContext(typeof(PangathonContext))]
-    [Migration("20200310154710_INIT")]
-    partial class INIT
+    [Migration("20200310215032_Init")]
+    partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

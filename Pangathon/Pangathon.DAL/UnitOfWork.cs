@@ -1,5 +1,4 @@
-﻿using Archivext.DataLayer;
-using Pangathon.DAL.Entities;
+﻿using Pangathon.DAL.Entities;
 using Pangathon.DAL.Interfaces;
 using System;
 
@@ -18,6 +17,7 @@ namespace Pangathon.DAL
         private IGenericRepository<Commentaire, Guid> commentaireRepository;
         private IGenericRepository<Entreprise, Guid> entrepriseRepository;
         private IGenericRepository<Poste, Guid> posteRepository;
+        private IGenericRepository<Priorite, Guid> prioriteRepository;
         private IGenericRepository<Role, Guid> roleRepository;
         private IGenericRepository<Statut, Guid> statutRepository;
         private IGenericRepository<Tache, Guid> tacheRepository;
@@ -62,6 +62,16 @@ namespace Pangathon.DAL
                 if (posteRepository == null)
                     posteRepository = new GenericRepository<Poste, Guid>(_context);
                 return posteRepository;
+            }
+        }
+
+        public IGenericRepository<Priorite, Guid> PrioriteRepository
+        {
+            get
+            {
+                if (prioriteRepository == null)
+                    prioriteRepository = new GenericRepository<Priorite, Guid>(_context);
+                return prioriteRepository;
             }
         }
 
