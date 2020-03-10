@@ -1,4 +1,4 @@
-USE [PangathonTest]
+USE [Pangolin]
 
 SET xact_abort ON
 BEGIN TRANSACTION seed_data
