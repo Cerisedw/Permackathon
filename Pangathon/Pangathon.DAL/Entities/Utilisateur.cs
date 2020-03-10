@@ -1,5 +1,6 @@
 ﻿using Pangathon.DAL.Interfaces;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -25,5 +26,7 @@ namespace Pangathon.DAL.Entities
         public IEntreprise<Guid> Entreprise { get; set; }
         [Required]
         public IPoste<Guid> Poste { get; set; }
+        public List<IRole<Guid>> Roles { get ; set ; }
+        public List<IParticipant> Participations { get; set; }
     }
 }

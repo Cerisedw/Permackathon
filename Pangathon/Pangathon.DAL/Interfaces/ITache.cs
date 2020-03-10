@@ -14,7 +14,7 @@ namespace Pangathon.DAL.Interfaces
         IStatut<Guid> Statut { get; set; }
         IEntreprise<Guid> Entreprise { get; set; }
         IType<Guid> Type { get; set; }
-        List<IUtilisateur<Guid>> Participants { get; set; }
+        List<IParticipant> Participants { get; set; }
         List<ICommentaire<Guid>> Commentaires { get; set; }
     }
 }

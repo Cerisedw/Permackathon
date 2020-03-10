@@ -14,5 +14,6 @@ namespace Pangathon.DAL.Interfaces
         IEntreprise<Guid> Entreprise { get; set; }
         IPoste<Guid> Poste { get; set; }
         List<IRole<Guid>> Roles { get; set; }
+        List<IParticipant> Participations { get; set; }
     }
 }

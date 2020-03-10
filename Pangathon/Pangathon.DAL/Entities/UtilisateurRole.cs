@@ -4,12 +4,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Pangathon.DAL.Entities
 {
-    [Table("Participant")]
-    public class Participant : IParticipant
+    [Table("UtilisateurRole")]
+    public class UtilisateurRole : IUtilisateurRole
     {
-        public Guid IdTache { get; set; }
-        public ITache<Guid> Tache { get; set; }
         public Guid IdUtilisateur { get; set; }
         public IUtilisateur<Guid> Utilisateur { get; set; }
+        public Guid IdRole { get; set; }
+        public IRole<Guid> Role { get; set; }
     }
 }
