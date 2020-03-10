@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Pangathon.DAL.Interfaces
 {
@@ -13,5 +14,7 @@ namespace Pangathon.DAL.Interfaces
         IStatut<Guid> Statut { get; set; }
         IEntreprise<Guid> Entreprise { get; set; }
         IType<Guid> Type { get; set; }
+        List<IUtilisateur<Guid>> Participants { get; set; }
+        List<ICommentaire<Guid>> Commentaires { get; set; }
     }
 }
