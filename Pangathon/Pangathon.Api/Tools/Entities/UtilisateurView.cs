@@ -7,7 +7,7 @@ namespace Pangathon.Api.Tools.Entities
 {
     public class UtilisateurView 
     {
-
+        private Guid _id;
         private string _nom;
         private string _prenom;
         private string _email;
@@ -104,6 +104,19 @@ namespace Pangathon.Api.Tools.Entities
             set
             {
                 _poste = value;
+            }
+        }
+
+        public Guid Id
+        {
+            get
+            {
+                return _id;
+            }
+
+            set
+            {
+                _id = value;
             }
         }
     }

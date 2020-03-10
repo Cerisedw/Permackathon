@@ -9,6 +9,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Pangathon.DAL;
+using Pangathon.DAL.Interfaces;
 
 namespace Pangathon.Api
 {
@@ -28,6 +30,8 @@ namespace Pangathon.Api
             services.AddMvc();
             services.AddSwaggerDocument();
             services.AddControllers();
+            services.AddDbContext<PangathonContext>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

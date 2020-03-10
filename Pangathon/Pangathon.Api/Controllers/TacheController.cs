@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Pangathon.Api.Tools;
 using Pangathon.Api.Tools.Entities;
+using Pangathon.DAL.Interfaces;
 
 namespace Pangathon.Api.Controllers
 {
@@ -13,6 +14,14 @@ namespace Pangathon.Api.Controllers
     [ApiController]
     public class TacheController : ControllerBase
     {
+
+        private readonly IUnitOfWork _unitOfWork;
+
+        public TacheController(IUnitOfWork unitOfWork)
+        {
+            _unitOfWork = unitOfWork;
+        }
+
         //[HttpGet("{idTache}")]
         // parametre, Guid idTache
         public TacheView Get()
@@ -25,15 +34,21 @@ namespace Pangathon.Api.Controllers
         }
 
         [HttpGet("getall")]
-        public List<TacheView> GetAll()
+        public List<TacheView> GetAll(IUnitOfWork unitofwork)
         {
-            List<TacheView> listeTaches = new List<TacheView>();
+            List<TacheView> listeTaches = unitofwork.TacheRepository.Get();
             for (int i = 0; i < 3; i++)
             {
                 if (i == 2)
                 {
                     TacheView t = TacheTools.GenerateTacheView();
                     t.Type = new TypeView() { Nom = "Something" };
+                    t.Statut = "En cours";
+                    listeTaches.Add(t);
+                }else if(i == 1)
+                {
+                    TacheView t = TacheTools.GenerateTacheView();
+                    t.Statut = "Fini";
                     listeTaches.Add(t);
                 }
                 else
