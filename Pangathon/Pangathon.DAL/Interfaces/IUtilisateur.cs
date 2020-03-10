@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Pangathon.DAL.Interfaces
 {
@@ -12,5 +13,6 @@ namespace Pangathon.DAL.Interfaces
         string Telephone { get; set; }
         IEntreprise<Guid> Entreprise { get; set; }
         IPoste<Guid> Poste { get; set; }
+        List<IRole<Guid>> Roles { get; set; }
     }
 }
