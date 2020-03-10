@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Pangathon.DAL.Entities
 {
-    [Table("Type")]
+    [Table("TypeTache")]
     public class TypeTache : ITypeTache<Guid>
     {
         [Key]

@@ -5,9 +5,9 @@ namespace Pangathon.DAL.Interfaces
 {
     public interface IUtilisateurRole
     {
-        Guid IdUtilisateur { get; set; }
+        Guid UtilisateurId { get; set; }
         Utilisateur Utilisateur { get; set; }
-        Guid IdRole { get; set; }
+        Guid RoleId { get; set; }
         Role Role { get; set; }
     }
 }

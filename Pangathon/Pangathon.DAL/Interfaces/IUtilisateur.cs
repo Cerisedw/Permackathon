@@ -13,7 +13,7 @@ namespace Pangathon.DAL.Interfaces
         string Telephone { get; set; }
         Entreprise Entreprise { get; set; }
         Poste Poste { get; set; }
-        List<Role> Roles { get; set; }
+        List<UtilisateurRole> UtilisateurRoles { get; set; }
         List<Participant> Participations { get; set; }
     }
 }

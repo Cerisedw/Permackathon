@@ -26,7 +26,7 @@ namespace Pangathon.DAL.Entities
         public Entreprise Entreprise { get; set; }
         [Required]
         public Poste Poste { get; set; }
-        public List<Role> Roles { get; set; }
+        public List<UtilisateurRole> UtilisateurRoles { get; set; }
         public List<Participant> Participations { get; set; }
     }
 }

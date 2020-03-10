@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Pangathon.DAL.Entities;
 using System;
+using System.Linq;
 
 namespace Pangathon.DAL
 {
@@ -18,7 +19,7 @@ namespace Pangathon.DAL
 
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=pangolinTest;Trusted_Connection=True;");
+                optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=PangathonTest;Trusted_Connection=True;");
                 optionsBuilder.EnableSensitiveDataLogging();
             }
         }
@@ -28,17 +29,37 @@ namespace Pangathon.DAL
             if (modelBuilder is null)
                 throw new ArgumentNullException(nameof(modelBuilder));
 
-            modelBuilder.Entity<Participant>().HasKey(p => new { p.IdTache, p.IdUtilisateur });
+            // Disable cascade delete globally
+            foreach (var relationship in modelBuilder.Model.GetEntityTypes().SelectMany(e => e.GetForeignKeys()))
+            {
+                relationship.DeleteBehavior = DeleteBehavior.Restrict;
+            }
+
+            // Table de jointure Participant
+            modelBuilder.Entity<Participant>().HasKey(p => new { p.TacheId, p.UtilisateurId });
 
             modelBuilder.Entity<Participant>()
                 .HasOne<Tache>(Participant => Participant.Tache)
                 .WithMany(Tache => Tache.Participants)
-                .HasForeignKey(Participant => Participant.IdTache);
+                .HasForeignKey(Participant => Participant.TacheId);
 
             modelBuilder.Entity<Participant>()
                 .HasOne<Utilisateur>(Participant => Participant.Utilisateur)
                 .WithMany(Utilisateur => Utilisateur.Participations)
-                .HasForeignKey(Participant => Participant.IdUtilisateur);
+                .HasForeignKey(Participant => Participant.UtilisateurId);
+
+            // Table de jointure UtilisateurRole
+            modelBuilder.Entity<UtilisateurRole>().HasKey(ur => new { ur.UtilisateurId, ur.RoleId });
+
+            modelBuilder.Entity<UtilisateurRole>()
+                .HasOne<Utilisateur>(UtilisateurRole => UtilisateurRole.Utilisateur)
+                .WithMany(Utilisateur => Utilisateur.UtilisateurRoles)
+                .HasForeignKey(UtilisateurRole => UtilisateurRole.UtilisateurId);
+
+            modelBuilder.Entity<UtilisateurRole>()
+                .HasOne<Role>(UtilisateurRole => UtilisateurRole.Role)
+                .WithMany(Role => Role.UtilisateurRoles)
+                .HasForeignKey(UtilisateurRole => UtilisateurRole.RoleId);
         }
 
         public DbSet<Adresse> Adresses { get; set; }

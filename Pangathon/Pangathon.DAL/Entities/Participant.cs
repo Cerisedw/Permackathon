@@ -7,9 +7,9 @@ namespace Pangathon.DAL.Entities
     [Table("Participant")]
     public class Participant : IParticipant
     {
-        public Guid IdTache { get; set; }
+        public Guid TacheId { get; set; }
         public Tache Tache { get; set; }
-        public Guid IdUtilisateur { get; set; }
+        public Guid UtilisateurId { get; set; }
         public Utilisateur Utilisateur { get; set; }
     }
 }

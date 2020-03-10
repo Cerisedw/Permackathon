@@ -5,9 +5,9 @@ namespace Pangathon.DAL.Interfaces
 {
     public interface IParticipant
     {
-        Guid IdTache { get; set; }
+        Guid TacheId { get; set; }
         Tache Tache { get; set; }
-        Guid IdUtilisateur { get; set; }
+        Guid UtilisateurId { get; set; }
         Utilisateur Utilisateur { get; set; }
     }
 }
