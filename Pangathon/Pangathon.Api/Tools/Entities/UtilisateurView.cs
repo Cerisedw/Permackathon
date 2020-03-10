@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Pangathon.Api.Tools.Entities
 {
-    public class UtilisateurView
+    public class UtilisateurView 
     {
 
         private string _nom;

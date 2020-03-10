@@ -39,7 +39,7 @@ namespace Pangathon.Api
             }
 
             app.UseRouting();
-            app.UseCors(options => options.WithOrigins("http://192.168.0.100:84").AllowAnyMethod());
+            app.UseCors(options => options.WithOrigins("*").AllowAnyMethod());
 
             app.UseOpenApi();
             app.UseSwaggerUi3();
