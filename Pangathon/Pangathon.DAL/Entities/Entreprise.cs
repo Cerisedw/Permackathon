@@ -16,6 +16,6 @@ namespace Pangathon.DAL.Entities
         public string Telephone { get; set; }
         public string Description { get; set; }
         [Required]
-        public IAdresse<Guid> Adresse { get; set; }
+        public Adresse Adresse { get; set; }
     }
 }

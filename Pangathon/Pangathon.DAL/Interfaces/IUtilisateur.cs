@@ -1,4 +1,4 @@
-﻿using System;
+﻿using Pangathon.DAL.Entities;
 using System.Collections.Generic;
 
 namespace Pangathon.DAL.Interfaces
@@ -11,9 +11,9 @@ namespace Pangathon.DAL.Interfaces
         string Password { get; set; }
         string Image { get; set; }
         string Telephone { get; set; }
-        IEntreprise<Guid> Entreprise { get; set; }
-        IPoste<Guid> Poste { get; set; }
-        List<IRole<Guid>> Roles { get; set; }
-        List<IParticipant> Participations { get; set; }
+        Entreprise Entreprise { get; set; }
+        Poste Poste { get; set; }
+        List<Role> Roles { get; set; }
+        List<Participant> Participations { get; set; }
     }
 }

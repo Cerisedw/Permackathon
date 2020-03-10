@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Pangathon.DAL.Entities;
+using System;
 using System.Collections.Generic;
 
 namespace Pangathon.DAL.Interfaces
@@ -9,12 +10,12 @@ namespace Pangathon.DAL.Interfaces
         string Description { get; set; }
         DateTime DateCreation { get; set; }
         DateTime DateDeadline { get; set; }
-        IUtilisateur<Guid> Createur { get; set; }
-        IPriorite<Guid> Priorite { get; set; }
-        IStatut<Guid> Statut { get; set; }
-        IEntreprise<Guid> Entreprise { get; set; }
-        IType<Guid> Type { get; set; }
-        List<IParticipant> Participants { get; set; }
-        List<ICommentaire<Guid>> Commentaires { get; set; }
+        Utilisateur Createur { get; set; }
+        Priorite Priorite { get; set; }
+        Statut Statut { get; set; }
+        Entreprise Entreprise { get; set; }
+        TypeTache TypeTache { get; set; }
+        List<Participant> Participants { get; set; }
+        List<Commentaire> Commentaires { get; set; }
     }
 }

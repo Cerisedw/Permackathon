@@ -8,8 +8,8 @@ namespace Pangathon.DAL.Entities
     public class Participant : IParticipant
     {
         public Guid IdTache { get; set; }
-        public ITache<Guid> Tache { get; set; }
+        public Tache Tache { get; set; }
         public Guid IdUtilisateur { get; set; }
-        public IUtilisateur<Guid> Utilisateur { get; set; }
+        public Utilisateur Utilisateur { get; set; }
     }
 }

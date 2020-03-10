@@ -2,11 +2,10 @@
 
 namespace Pangathon.DAL.Interfaces
 {
-    public interface IEntreprise<TIdType> : IEntity<TIdType>
+    public interface ITypeTache<TIdType> : IEntity<TIdType>
     {
         string Nom { get; set; }
-        string Telephone { get; set; }
         string Description { get; set; }
-        Adresse Adresse { get; set; }
+        TypeTache Parent { get; set; }
     }
 }

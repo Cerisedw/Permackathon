@@ -1,6 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Pangathon.DAL.Entities;
+using System;
 
 namespace Pangathon.DAL.Interfaces
 {
@@ -8,7 +7,7 @@ namespace Pangathon.DAL.Interfaces
     {
         DateTime DateCreation { get; set; }
         string Contenu { get; set; }
-        ITache<Guid> Tache { get; set; }
-        IUtilisateur<Guid> Utilisateur { get; set; }
+        Tache Tache { get; set; }
+        Utilisateur Utilisateur { get; set; }
     }
 }

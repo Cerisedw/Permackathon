@@ -1,4 +1,4 @@
-﻿using System;
+﻿using Pangathon.DAL.Entities;
 
 namespace Pangathon.DAL.Interfaces
 {
@@ -8,6 +8,6 @@ namespace Pangathon.DAL.Interfaces
         string Numero { get; set; }
         string Boite { get; set; }
         string CodePostal { get; set; }
-        IVille<Guid> Ville { get; set; }
+        Ville Ville { get; set; }
     }
 }

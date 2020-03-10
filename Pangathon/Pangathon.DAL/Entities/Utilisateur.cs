@@ -23,10 +23,10 @@ namespace Pangathon.DAL.Entities
         [Required]
         public string Telephone { get; set; }
         [Required]
-        public IEntreprise<Guid> Entreprise { get; set; }
+        public Entreprise Entreprise { get; set; }
         [Required]
-        public IPoste<Guid> Poste { get; set; }
-        public List<IRole<Guid>> Roles { get ; set ; }
-        public List<IParticipant> Participations { get; set; }
+        public Poste Poste { get; set; }
+        public List<Role> Roles { get; set; }
+        public List<Participant> Participations { get; set; }
     }
 }

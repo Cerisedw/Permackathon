@@ -8,8 +8,8 @@ namespace Pangathon.DAL.Entities
     public class UtilisateurRole : IUtilisateurRole
     {
         public Guid IdUtilisateur { get; set; }
-        public IUtilisateur<Guid> Utilisateur { get; set; }
+        public Utilisateur Utilisateur { get; set; }
         public Guid IdRole { get; set; }
-        public IRole<Guid> Role { get; set; }
+        public Role Role { get; set; }
     }
 }

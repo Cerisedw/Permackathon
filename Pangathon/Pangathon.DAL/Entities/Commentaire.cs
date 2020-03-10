@@ -15,8 +15,8 @@ namespace Pangathon.DAL.Entities
         [Required]
         public string Contenu { get; set; }
         [Required]
-        public ITache<Guid> Tache { get; set; }
+        public Tache Tache { get; set; }
         [Required]
-        public IUtilisateur<Guid> Utilisateur { get; set; }
+        public Utilisateur Utilisateur { get; set; }
     }
 }

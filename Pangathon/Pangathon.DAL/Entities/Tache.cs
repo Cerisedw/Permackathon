@@ -19,16 +19,16 @@ namespace Pangathon.DAL.Entities
         public DateTime DateCreation { get; set; }
         public DateTime DateDeadline { get; set; }
         [Required]
-        public IUtilisateur<Guid> Createur { get; set; }
+        public Utilisateur Createur { get; set; }
         [Required]
-        public IPriorite<Guid> Priorite { get; set; }
+        public Priorite Priorite { get; set; }
         [Required]
-        public IStatut<Guid> Statut { get; set; }
+        public Statut Statut { get; set; }
         [Required]
-        public IEntreprise<Guid> Entreprise { get; set; }
+        public Entreprise Entreprise { get; set; }
         [Required]
-        public IType<Guid> Type { get; set; }
-        public List<IParticipant> Participants { get; set; }
-        public List<ICommentaire<Guid>> Commentaires { get; set; }
+        public TypeTache TypeTache { get; set; }
+        public List<Participant> Participants { get; set; }
+        public List<Commentaire> Commentaires { get; set; }
     }
 }

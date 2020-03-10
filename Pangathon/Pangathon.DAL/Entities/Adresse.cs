@@ -18,6 +18,6 @@ namespace Pangathon.DAL.Entities
         [Required]
         public string CodePostal { get; set; }
         [Required]
-        public IVille<Guid> Ville { get; set; }
+        public Ville Ville { get; set; }
     }   
 }
