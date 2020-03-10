@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Pangathon.DAL.Interfaces
 {
-    public interface IParticipant<TIdType> : IEntity<TIdType>
+    public interface IParticipant
     {
         ITache<Guid> Tache { get; set; }
         IUtilisateur<Guid> Utilisateur { get; set; }
