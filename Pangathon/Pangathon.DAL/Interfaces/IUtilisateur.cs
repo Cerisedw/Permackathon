@@ -10,7 +10,7 @@ namespace Pangathon.DAL.Interfaces
         string Password { get; set; }
         string Image { get; set; }
         string Telephone { get; set; }
-        IEntreprise Entreprise { get; set; }
-        IPoste Poste { get; set; }
+        IEntreprise<Guid> Entreprise { get; set; }
+        IPoste<Guid> Poste { get; set; }
     }
 }
