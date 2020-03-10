@@ -22,80 +22,45 @@ namespace Pangathon.Api.Controllers
             _unitOfWork = unitOfWork;
         }
 
-        //[HttpGet("{idTache}")]
+        [HttpGet("{idTache}")]
         // parametre, Guid idTache
-        public TacheView Get()
+        public TacheView Get(Guid idTache)
         {
-            //List<ITache> listTache = repository.GetAll();
-            TacheView tacheTest  = TacheTools.GenerateTacheView();
-
-            // va retourner du Json si il est demandé.
+            TacheView tacheTest  = TacheTools.TacheToTacheV(_unitOfWork.TacheRepository.GetById(idTache));
             return tacheTest;
         }
 
         [HttpGet("getall")]
-        public List<TacheView> GetAll(IUnitOfWork unitofwork)
+        public List<TacheView> GetAll()
         {
-            List<TacheView> listeTaches = unitofwork.TacheRepository.Get();
-            for (int i = 0; i < 3; i++)
-            {
-                if (i == 2)
-                {
-                    TacheView t = TacheTools.GenerateTacheView();
-                    t.Type = new TypeView() { Nom = "Something" };
-                    t.Statut = "En cours";
-                    listeTaches.Add(t);
-                }else if(i == 1)
-                {
-                    TacheView t = TacheTools.GenerateTacheView();
-                    t.Statut = "Fini";
-                    listeTaches.Add(t);
-                }
-                else
-                {
-                    listeTaches.Add(TacheTools.GenerateTacheView());
-                }
-            }
+            List<TacheView> listeTaches = TacheTools.listTolistView(_unitOfWork.TacheRepository.Get().ToList());
             return listeTaches;
         }
 
-        [HttpGet("type/{paramsType}")]
-        public List<TacheView> FilterByTypeNom([FromQuery]string paramsType)
-        {
-            List<TacheView> listeTaches = new List<TacheView>();
-            for (int i = 0; i < 3; i++)
-            {
-                if (i == 2)
-                {
-                    TacheView t = TacheTools.GenerateTacheView();
-                    t.Type = new TypeView() { Nom = "Something" };
-                    listeTaches.Add(t);
-                }
-                else
-                {
-                    listeTaches.Add(TacheTools.GenerateTacheView());
-                }
-            }
-            return listeTaches.Where(x=>x.Type.Nom == paramsType).ToList();
-        }
+        //[HttpGet("type/{paramsType}")]
+        //public List<TacheView> FilterByTypeNom([FromQuery]string paramsType)
+        //{
+        //    List<TacheView> listeTaches = new List<TacheView>();
+        //    for (int i = 0; i < 3; i++)
+        //    {
+        //        if (i == 2)
+        //        {
+        //            TacheView t = TacheTools.GenerateTacheView();
+        //            t.Type = new TypeView() { Nom = "Something" };
+        //            listeTaches.Add(t);
+        //        }
+        //        else
+        //        {
+        //            listeTaches.Add(TacheTools.GenerateTacheView());
+        //        }
+        //    }
+        //    return listeTaches.Where(x=>x.Type.Nom == paramsType).ToList();
+        //}
 
         [HttpGet("order/priorite")]
         public List<TacheView> OrderByPriorite ()
         {
-            List<TacheView> listeTaches = new List<TacheView>();
-            for (int i = 0; i < 3; i++)
-            {
-                if (i == 2)
-                {
-                    TacheView t = TacheTools.GenerateTacheView();
-                    t.Priorite = new PrioriteView() { Nom = "Basse", Niveau = 1 };
-                    listeTaches.Add(t);
-                }
-                else
-                {
-                    listeTaches.Add(TacheTools.GenerateTacheView());
-                }
-            }
+            List<TacheView> listeTaches = TacheTools.listTolistView(_unitOfWork.TacheRepository.Get().ToList());
             return listeTaches.OrderByDescending(x => x.Priorite.Niveau ).ToList();
         }
 
