@@ -24,6 +24,9 @@ namespace Pangathon.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors();
+            services.AddMvc();
+            services.AddSwaggerDocument();
             services.AddControllers();
         }
 
@@ -36,6 +39,11 @@ namespace Pangathon.Api
             }
 
             app.UseRouting();
+            app.UseCors(options => options.WithOrigins("http://192.168.0.100:84").AllowAnyMethod());
+
+            app.UseOpenApi();
+            app.UseSwaggerUi3();
+
 
             app.UseAuthorization();
 
