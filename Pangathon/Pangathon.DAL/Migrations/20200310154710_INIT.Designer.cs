@@ -10,8 +10,8 @@ using Pangathon.DAL;
 namespace Pangathon.DAL.Migrations
 {
     [DbContext(typeof(PangathonContext))]
-    [Migration("20200310142453_v1")]
-    partial class v1
+    [Migration("20200310154710_INIT")]
+    partial class INIT
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -203,7 +203,7 @@ namespace Pangathon.DAL.Migrations
                     b.Property<DateTime>("DateCreation")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("DateDeadline")
+                    b.Property<DateTime?>("DateDeadline")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Description")

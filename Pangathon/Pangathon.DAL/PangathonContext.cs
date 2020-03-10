@@ -19,7 +19,8 @@ namespace Pangathon.DAL
 
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=PangathonTest;Trusted_Connection=True;");
+                //optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=PangathonTest;Trusted_Connection=True;");
+                optionsBuilder.UseSqlServer(@"Server=192.168.0.100\HACKATHON;Database=Pangolin;user id=PangolinUser;password=PangolinUser;");
                 optionsBuilder.EnableSensitiveDataLogging();
             }
         }
