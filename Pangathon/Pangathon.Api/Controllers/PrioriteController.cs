@@ -22,13 +22,13 @@ namespace Pangathon.Api.Controllers
             _unitOfWork = unitOfWork;
         }
 
-        // Pas de repo Priorite ?
 
-        //[HttpGet("getall")]
-        //public List<PrioriteView> GetAll()
-        //{
-        //    List<PrioriteView> listePrio = PrioriteTools.listToListV(_unitOfWork.P)
-        //}
+        [HttpGet("getall")]
+        public List<PrioriteView> GetAll()
+        {
+            List<PrioriteView> listePrio = PrioriteTools.listToListV(_unitOfWork.PrioriteRepository.Get());
+            return listePrio;
+        }
 
     }
 }
