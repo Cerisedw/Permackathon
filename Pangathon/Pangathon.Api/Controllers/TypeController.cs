@@ -16,6 +16,7 @@ namespace Pangathon.Api.Controllers
     {
 
         private readonly IUnitOfWork _unitOfWork;
+        private readonly string _includeString = "Parent";
 
         public TypeController(IUnitOfWork unitOfWork)
         {
@@ -26,7 +27,7 @@ namespace Pangathon.Api.Controllers
         [HttpGet("getall")]
         public List<TypeView> GetAll()
         {
-            List<TypeView> listeTypes = TypeTools.listToListV(_unitOfWork.TypeTacheRepository.Get());
+            List<TypeView> listeTypes = TypeTools.listToListV(_unitOfWork.TypeTacheRepository.Get(null, null, _includeString));
             return listeTypes;
         }
 

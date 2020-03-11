@@ -15,6 +15,7 @@ namespace Pangathon.Api.Controllers
     public class UtilisateurController : ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
+        private readonly string _includeString = "Entreprise,Entreprise.Adresse,Entreprise.Adresse.Ville,Poste";
 
         public UtilisateurController(IUnitOfWork unitOfWork)
         {
@@ -24,14 +25,14 @@ namespace Pangathon.Api.Controllers
         [HttpGet("{idUtilisateur}")]
         public UtilisateurView Get(Guid idUtilisateur)
         {
-            UtilisateurView utilisateur = UtilisateurTools.UtToUtV(_unitOfWork.UtilisateurRepository.GetById(idUtilisateur));
+            UtilisateurView utilisateur = UtilisateurTools.UtToUtV(_unitOfWork.UtilisateurRepository.GetById(idUtilisateur, _includeString));
             return utilisateur;
         }
 
         [HttpGet("getall")]
         public List<UtilisateurView> GetAll()
         {
-            List<UtilisateurView> listeUtilisateur = UtilisateurTools.listTolistV(_unitOfWork.UtilisateurRepository.Get().ToList());
+            List<UtilisateurView> listeUtilisateur = UtilisateurTools.listTolistV(_unitOfWork.UtilisateurRepository.Get(null, null, _includeString).ToList());
             
             return listeUtilisateur;
         }

@@ -15,6 +15,7 @@ namespace Pangathon.Api.Controllers
     public class EntrepriseController : ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
+        private readonly string _includeString = "Adresse,Adresse.Ville";
 
         public EntrepriseController(IUnitOfWork unitOfWork)
         {
@@ -24,14 +25,14 @@ namespace Pangathon.Api.Controllers
         [HttpGet("{idEntreprise}")]
         public EntrepriseView Get(Guid idEntreprise)
         {
-            EntrepriseView entreprise = EntrepriseTools.EnToEnV(_unitOfWork.EntrepriseRepository.GetById(idEntreprise));
+            EntrepriseView entreprise = EntrepriseTools.EnToEnV(_unitOfWork.EntrepriseRepository.GetById(idEntreprise, _includeString));
             return entreprise;
         }
 
         [HttpGet("getall")]
         public List<EntrepriseView> GetAll()
         {
-            List<EntrepriseView> listeEntreprise = EntrepriseTools.listToListV(_unitOfWork.EntrepriseRepository.Get().ToList());
+            List<EntrepriseView> listeEntreprise = EntrepriseTools.listToListV(_unitOfWork.EntrepriseRepository.Get(null, null, _includeString).ToList());
             return listeEntreprise;
         }
 

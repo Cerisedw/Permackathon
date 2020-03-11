@@ -51,6 +51,12 @@ namespace Pangathon.DAL
             return _dbSet.Find(id);
         }
 
+        public virtual TEntity GetById(TIdType id, string includeProperties = "")
+        {
+            //return _dbSet.Find(id);
+            return Get(x => EqualityComparer<TIdType>.Default.Equals(x.Id, id), null, includeProperties).FirstOrDefault();
+        }
+
         public virtual TEntity Insert(TEntity entity)
         {
             return _dbSet.Add(entity).Entity;

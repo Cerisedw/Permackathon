@@ -11,6 +11,7 @@ namespace Pangathon.DAL.Interfaces
         void Delete(TEntity entityToDelete);
         IEnumerable<TEntity> Get(Expression<Func<TEntity, bool>> filter = null, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null, string includeProperties = "");
         TEntity GetById(TIdType id);
+        TEntity GetById(TIdType id, string includeProperties);
         TEntity Insert(TEntity entityToInsert);
         void Update(TEntity entityToUpdate);
     }
