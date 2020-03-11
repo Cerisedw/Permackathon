@@ -509,7 +509,9 @@ mark,
   font-size: 90%;
   color: #858796;
 }
-
+.round-corner {
+  border-radius:50%;
+}
 code {
   font-size: 87.5%;
   color: #e83e8c;

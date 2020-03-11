@@ -87,24 +87,56 @@ document.addEventListener('DOMContentLoaded', function(){
                 name.className='card-title';
                 
                 let btnParticipant = document.createElement('button');
-                btnParticipant.className="btn btn-primary btn-sm"
+                btnParticipant.className="btn btn-primary btn-sm";
                 btnParticipant.setAttribute('data-index', myId);
+                btnParticipant.setAttribute('type', 'button');
+                btnParticipant.setAttribute('data-target', '#'+myId);
                 btnParticipant.innerHTML="<i class='fas fa-plus text-white'></i>";
-                btnParticipant.addEventListener('click', (event)=>{console.log(event.target.parentNode.dataset.index)});
+
+                let modalContainer = document.createElement('div');
+                modalContainer.className="modal fade";
+                modalContainer.setAttribute("id", myId);
+                modalContainer.setAttribute("tabindex", "-1");
+                modalContainer.setAttribute("role", "dialog");
+                modalContainer.setAttribute("aria-ladelledby", "addParticipant");
+                modalContainer.setAttribute("aria-hidden", "true");
+                
+
+                modalContainer.innerHTML = `
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      ...
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                  </div>
+                </div>`;
+                
                 
                 // implantation des différents éléments créés (pour le moment "flottés") dans l'html. De nouveau dans la boucle 20x.-----------------------------
                 
                 cardBody.textContent = titreTache + ' - ' + nomEntreprise;
-
                 item.appendChild(cardBody);
                 console.log(doing);
+                
                 
             
                 if (permaDatabaseJSON[i].statut === 'En attente'){
                     cardBody.appendChild(btnParticipant);
+                    cardBody.appendChild(modalContainer);
                     toDo.appendChild(item);
                 } 
                 if (permaDatabaseJSON[i].statut === 'En cours'){
+                    cardBody.appendChild(btnParticipant);
                     doing.appendChild(item);
                 } 
                 if (permaDatabaseJSON[i].statut === 'Fini'){
