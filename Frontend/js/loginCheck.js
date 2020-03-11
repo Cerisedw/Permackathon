@@ -1,3 +1,4 @@
+
 let welcomeDiv = document.getElementById("welcomeDiv");
 let usernameSpan = document.getElementById("username");
 let deleteMe= document.getElementById('deleteMe');
