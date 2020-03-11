@@ -34,36 +34,55 @@
               <div class="text-center">
                 <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
               </div>
-              <form class="user">
+              <form class="user" method="post" action="http://192.168.0.100:84/api/utilisateur/register">
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="First Name">
+                    <input type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="Prenom" name="Prenom">
                   </div>
                   <div class="col-sm-6">
-                    <input type="text" class="form-control form-control-user" id="exampleLastName" placeholder="Last Name">
+                    <input type="text" class="form-control form-control-user" id="exampleLastName" placeholder="Nom" name="Nom">
                   </div>
                 </div>
                 <div class="form-group">
-                  <input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Email Address">
+                  <input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Adresse Email" name="Email">
                 </div>
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
+                    <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Mot de Passe" name="Password">
                   </div>
                   <div class="col-sm-6">
-                    <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Repeat Password">
+                    <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Vérification mot de passe" name="PasswordCheck">
                   </div>
                 </div>
-                <a href="login.html" class="btn btn-primary btn-user btn-block">
+                <div class="form-group">
+                  <select class="form-control" id="exampleRole" name="Role">
+                    <option value="admin">Administrateur</option>
+                    <option value="predicateur">Accès aux prévisions</option>
+                    <option value="datamanager">Accès aux data<s/option>
+                    <option value="user">User</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <select class="form-control" id="exampleRole" name="Poste">
+                    <option value="ceo">Directeur</option>
+                    <option value="employe">Employé</option>
+                    <option value="stagiaire">Stagiaire</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputImage">Uploadez une photo de profil</label>
+                  <input type="file" class="form-control-file-lg form-control-user" id="exampleInputImage"name="Image">
+                </div>
+                <button type="submit" class="btn btn-primary btn-user btn-block">
                   Register Account
-                </a>
+                </button>
               </form>
               <hr>
               <div class="text-center">
                 <a class="small" href="forgot-password.html">Forgot Password?</a>
               </div>
               <div class="text-center">
-                <a class="small" href="login.html">Already have an account? Login!</a>
+                <a class="small" href="./login.html">Already have an account? Login!</a>
               </div>
             </div>
           </div>
