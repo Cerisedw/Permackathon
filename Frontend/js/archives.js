@@ -47,13 +47,7 @@ document.addEventListener('DOMContentLoaded', function(){
     let request = new XMLHttpRequest();
     let requestURL = 'http://192.168.0.100:84/api/Tache/getall';
     
-    let toDo = document.querySelector("#todo");
-    let doing = document.querySelector("#doing");
-    let done = document.querySelector("#done");
-
-    let date = moment().format('MMMM Do YYYY, h:mm:ss a');
-    console.log(date);
-    
+    let archives = document.querySelector("#archives");
     
     request.addEventListener('readystatechange', function(event){
         if (event.currentTarget.readyState == 4 && event.currentTarget.status == 200) {
@@ -81,35 +75,22 @@ document.addEventListener('DOMContentLoaded', function(){
                 item.className='card task-item';
                 
                 let cardBody = document.createElement('div');
-                cardBody.className = 'card-body test';
+                cardBody.className = 'card-body';
                 
                 let name        = document.createElement('h2');
                 name.className='card-title';
                 
-                let btnParticipant = document.createElement('button');
-                btnParticipant.className="btn btn-primary btn-sm"
-                btnParticipant.setAttribute('data-index', myId);
-                btnParticipant.innerHTML="<i class='fas fa-plus text-white'></i>";
-                btnParticipant.addEventListener('click', (event)=>{console.log(event.target.parentNode.dataset.index)});
                 
                 // implantation des différents éléments créés (pour le moment "flottés") dans l'html. De nouveau dans la boucle 20x.-----------------------------
                 
                 cardBody.textContent = titreTache + ' - ' + nomEntreprise;
 
                 item.appendChild(cardBody);
-                console.log(doing);
                 
             
-                if (permaDatabaseJSON[i].statut === 'En attente'){
-                    cardBody.appendChild(btnParticipant);
-                    toDo.appendChild(item);
-                } 
-                if (permaDatabaseJSON[i].statut === 'En cours'){
-                    doing.appendChild(item);
-                } 
-                if (permaDatabaseJSON[i].statut === 'Fini'){
-                    done.appendChild(item);
-                } 
+                if (permaDatabaseJSON[i].statut === 'Archive'){
+                    archives.appendChild(item);
+                }  
             }
         }
     })
