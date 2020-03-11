@@ -51,9 +51,9 @@ namespace Pangathon.DAL
             return _dbSet.Find(id);
         }
 
-        public virtual void Insert(TEntity entity)
+        public virtual TEntity Insert(TEntity entity)
         {
-            _dbSet.Add(entity);
+            return _dbSet.Add(entity).Entity;
         }
 
         public virtual void Delete(TIdType id)
