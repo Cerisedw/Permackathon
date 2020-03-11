@@ -20,6 +20,7 @@
   
   <!-- Custom styles for this page -->
   <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/Aristo/Aristo.css">
   
 </head>
 
@@ -292,7 +293,7 @@
                               </button>
                             </div>
                             <div class="modal-body text-left">
-                              <form>
+                              <form method="POST" action="http://192.168.0.100:84/api/tache/">
                                 <div class="form-group">
                                   <label for="nomTache">Titre de la tâche</label>
                                   <input type="text" class="form-control" id="nomTache" aria-describedby="tacheName" placeholder="Entrez le titre de la tâche">
@@ -309,13 +310,23 @@
                                     <option>Urgente</option>
                                   </select>
                                 </div>
-                                <div class="form-group form-check">
-                                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                  <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                                <div class="form-group">
+                                  <label for="datepicker">Deadline si nécessaire</label>
+                                  <input type="text" class="form-control" id="datepicker">
+                                </div>
+                                <div class="form-group">
+                                  <label for="tachePriorite">Type de tâche</label>
+                                  <select class="form-control" id="tachePriorite">
+                                    <option>Production</option>
+                                    <option>Entretien et travaux</option>
+                                    <option>GRH</option>
+                                    <option>Gestion</option>
+                                    <option>Communication</option>
+                                  </select>
                                 </div>
                                 <div class="modal-footer">
                                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                  <button type="button" class="btn btn-primary">Save changes</button>
+                                  <button type="submit" class="btn btn-primary">Ajouter</button>
                                 </div>
                               </form>
                             </div>
@@ -391,6 +402,8 @@
           
           <!-- Bootstrap core JavaScript-->
           <script src="vendor/jquery/jquery.js"></script>
+          <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+          <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
           <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
           
           <!-- Core plugin JavaScript-->
@@ -406,6 +419,7 @@
           <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
           
           <!-- Page level custom scripts -->
+          <script src="js/datePicker.js"></script>
           <script src="js/demo/datatables-demo.js"></script>
           
         </body>
