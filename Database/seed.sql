@@ -59,7 +59,7 @@ GO
 INSERT [dbo].[Poste] ([Id], [Nom], [Description]) VALUES (N'ee61868d-f609-4e31-ad27-fa6f95086192', N'Équipe Prod', N'Équipe de production')
 GO
 
-INSERT [dbo].[Utilisateur] ([Id], [Nom], [Prenom], [Email], [Password], [Image], [Telephone], [EntrepriseId], [PosteId]) VALUES (N'ad70b45f-09a8-4a5a-8e6f-c46a4530befb', N'Pikachu', N'Michael', N'mike@charleroi.com', N'mike1234', NULL, N'02 758 75 87', N'a5de166f-bc73-4ef1-88f8-d1b6c93d55d2', N'33ba097c-f90e-4875-8adf-5f7080e3d444')
+INSERT [dbo].[Utilisateur] ([Id], [Nom], [Prenom], [Email], [Password], [Image], [Telephone], [EntrepriseId], [PosteId]) VALUES (N'ad70b45f-09a8-4a5a-8e6f-c46a4530befb', N'Luna', N'Valérie', N'vluna@charleroi.com', N'mike1234', NULL, N'02 758 75 87', N'a5de166f-bc73-4ef1-88f8-d1b6c93d55d2', N'33ba097c-f90e-4875-8adf-5f7080e3d444')
 GO
 INSERT [dbo].[Utilisateur] ([Id], [Nom], [Prenom], [Email], [Password], [Image], [Telephone], [EntrepriseId], [PosteId]) VALUES (N'3d9f5f9a-05d5-4670-8bd7-dcae752f42ef', N'Bidule', N'Nathan', N'nathan@permafungi.com', N'test1234', NULL, N'0477 00 00 00', N'981f83a9-fc8a-4ecd-9ec8-dd4f9f141261', N'ee61868d-f609-4e31-ad27-fa6f95086192')
 GO
@@ -73,6 +73,9 @@ GO
 INSERT [dbo].[Tache] ([Id], [Nom], [Description], [DateCreation], [DateDeadline], [DateRealisation], [CreateurId], [PrioriteId], [StatutId], [EntrepriseId], [TypeTacheId]) VALUES (N'e2f0637c-b39a-4c5d-8131-b8364c392100', N'Magasin dans les caves', N'Magasin dans les caves.', CAST(N'2020-03-10T12:30:00.000' AS DateTime), CAST(N'2020-07-21T12:00:00.000' AS DateTime), NULL, N'3d9f5f9a-05d5-4670-8bd7-dcae752f42ef', N'2963190a-675b-4b92-86b2-01bb453df92c', N'a3419a76-b03b-4402-9756-5b4207ef7819', N'981f83a9-fc8a-4ecd-9ec8-dd4f9f141261', N'bf39a626-5aa7-4895-9d9e-30c396db2424')
 GO
 INSERT [dbo].[Tache] ([Id], [Nom], [Description], [DateCreation], [DateDeadline], [DateRealisation], [CreateurId], [PrioriteId], [StatutId], [EntrepriseId], [TypeTacheId]) VALUES (N'5cda0f15-f96b-4de5-a1fe-f44c9db1f7b9', N'Photos et placement du container à envoyer', 'Photos et placement du container à envoyer', CAST(N'2020-03-10T12:37:00.000' AS DateTime), CAST(N'2020-02-21T12:00:00.000' AS DateTime), NULL, N'3d9f5f9a-05d5-4670-8bd7-dcae752f42ef', N'2963190a-675b-4b92-86b2-01bb453df92c', N'a3419a76-b03b-4402-9756-5b4207ef7819', N'981f83a9-fc8a-4ecd-9ec8-dd4f9f141261', N'bf39a626-5aa7-4895-9d9e-30c396db2424')
+GO
+INSERT [dbo].[Tache] ([Id], [Nom], [Description], [DateCreation], [DateDeadline], [DateRealisation], [CreateurId], [PrioriteId], [StatutId], [EntrepriseId], [TypeTacheId]) VALUES (N'f85561db-6263-45ac-adc8-0ddeb6c17998', N'Une tâche faite depuis longtemps', 'Une tâche faite depuis longtemps', CAST(N'2019-03-10T12:37:00.000' AS DateTime), CAST(N'2019-06-01T12:00:00.000' AS DateTime), CAST(N'2019-05-21T12:00:00.000' AS DateTime), N'3d9f5f9a-05d5-4670-8bd7-dcae752f42ef', N'2963190a-675b-4b92-86b2-01bb453df92c', N'5e083e89-8abd-46d0-8ebc-eb50fe117ebf', N'981f83a9-fc8a-4ecd-9ec8-dd4f9f141261', N'bf39a626-5aa7-4895-9d9e-30c396db2424')
+
 
 GO
 INSERT [dbo].[Role] ([Id], [Nom], [Description]) VALUES (N'1cb70b08-8326-4ef8-86c4-c3003436b52b', N'Employe', N'Rôle pour les employés.')
