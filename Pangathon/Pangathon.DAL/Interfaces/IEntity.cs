@@ -1,7 +1,9 @@
-﻿namespace Pangathon.DAL.Interfaces
+﻿using System;
+
+namespace Pangathon.DAL.Interfaces
 {
-    public interface IEntity<TIdType>
+    public interface IEntity
     {
-        TIdType Id { get; set; }
+        Guid Id { get; set; }
     }
 }

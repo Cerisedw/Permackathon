@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Pangathon.DAL.Entities
 {
     [Table("Role")]
-    public class Role : IRole<Guid>
+    public class Role : IRole
     {
         [Key]
         public Guid Id { get; set; }

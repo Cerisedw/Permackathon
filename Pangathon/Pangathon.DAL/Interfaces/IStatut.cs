@@ -1,6 +1,6 @@
 ﻿namespace Pangathon.DAL.Interfaces
 {
-    public interface IStatut<TIdType> : IEntity<TIdType>
+    public interface IStatut : IEntity
     {
         string Nom { get; set; }
     }

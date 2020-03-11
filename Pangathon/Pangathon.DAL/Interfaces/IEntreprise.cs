@@ -2,7 +2,7 @@
 
 namespace Pangathon.DAL.Interfaces
 {
-    public interface IEntreprise<TIdType> : IEntity<TIdType>
+    public interface IEntreprise : IEntity
     {
         string Nom { get; set; }
         string Telephone { get; set; }

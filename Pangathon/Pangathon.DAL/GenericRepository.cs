@@ -7,7 +7,7 @@ using System.Linq.Expressions;
 
 namespace Pangathon.DAL
 {
-    public class GenericRepository<TEntity, TIdType> : IGenericRepository<TEntity, TIdType> where TEntity : class, IEntity<TIdType>
+    public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : class, IEntity
     {
         private readonly PangathonContext _context;
         private readonly DbSet<TEntity> _dbSet;
@@ -46,15 +46,15 @@ namespace Pangathon.DAL
             }
         }
 
-        public virtual TEntity GetById(TIdType id)
+        public virtual TEntity GetById(Guid id)
         {
             return _dbSet.Find(id);
         }
 
-        public virtual TEntity GetById(TIdType id, string includeProperties = "")
+        public virtual TEntity GetById(Guid id, string includeProperties = "")
         {
             //return _dbSet.Find(id);
-            return Get(x => EqualityComparer<TIdType>.Default.Equals(x.Id, id), null, includeProperties).FirstOrDefault();
+            return Get(x => x.Id == id, null, includeProperties).FirstOrDefault();
         }
 
         public virtual TEntity Insert(TEntity entity)
@@ -62,7 +62,7 @@ namespace Pangathon.DAL
             return _dbSet.Add(entity).Entity;
         }
 
-        public virtual void Delete(TIdType id)
+        public virtual void Delete(Guid id)
         {
             TEntity entityToDelete = _dbSet.Find(id);
             Delete(entityToDelete);

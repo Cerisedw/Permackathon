@@ -13,124 +13,124 @@ namespace Pangathon.DAL
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
 
-        private IGenericRepository<Adresse, Guid> adresseRepository;
-        private IGenericRepository<Commentaire, Guid> commentaireRepository;
-        private IGenericRepository<Entreprise, Guid> entrepriseRepository;
-        private IGenericRepository<Poste, Guid> posteRepository;
-        private IGenericRepository<Priorite, Guid> prioriteRepository;
-        private IGenericRepository<Role, Guid> roleRepository;
-        private IGenericRepository<Statut, Guid> statutRepository;
-        private IGenericRepository<Tache, Guid> tacheRepository;
-        private IGenericRepository<TypeTache, Guid> typeTacheRepository;
-        private IGenericRepository<Utilisateur, Guid> utilisateurRepository;
-        private IGenericRepository<Ville, Guid> villeRepository;
+        private IGenericRepository<Adresse> adresseRepository;
+        private IGenericRepository<Commentaire> commentaireRepository;
+        private IGenericRepository<Entreprise> entrepriseRepository;
+        private IGenericRepository<Poste> posteRepository;
+        private IGenericRepository<Priorite> prioriteRepository;
+        private IGenericRepository<Role> roleRepository;
+        private IGenericRepository<Statut> statutRepository;
+        private IGenericRepository<Tache> tacheRepository;
+        private IGenericRepository<TypeTache> typeTacheRepository;
+        private IGenericRepository<Utilisateur> utilisateurRepository;
+        private IGenericRepository<Ville> villeRepository;
 
-        public IGenericRepository<Adresse, Guid> AdresseRepository
+        public IGenericRepository<Adresse> AdresseRepository
         {
             get
             {
                 if (adresseRepository == null)
-                    adresseRepository = new GenericRepository<Adresse, Guid>(_context);
+                    adresseRepository = new GenericRepository<Adresse>(_context);
                 return adresseRepository;
             }
         }
 
-        public IGenericRepository<Commentaire, Guid> CommentaireRepository
+        public IGenericRepository<Commentaire> CommentaireRepository
         {
             get
             {
                 if (commentaireRepository == null)
-                    commentaireRepository = new GenericRepository<Commentaire, Guid>(_context);
+                    commentaireRepository = new GenericRepository<Commentaire>(_context);
                 return commentaireRepository;
             }
         }
 
-        public IGenericRepository<Entreprise, Guid> EntrepriseRepository
+        public IGenericRepository<Entreprise> EntrepriseRepository
         {
             get
             {
                 if (entrepriseRepository == null)
-                    entrepriseRepository = new GenericRepository<Entreprise, Guid>(_context);
+                    entrepriseRepository = new GenericRepository<Entreprise>(_context);
                 return entrepriseRepository;
             }
         }
 
-        public IGenericRepository<Poste, Guid> PosteRepository
+        public IGenericRepository<Poste> PosteRepository
         {
             get
             {
                 if (posteRepository == null)
-                    posteRepository = new GenericRepository<Poste, Guid>(_context);
+                    posteRepository = new GenericRepository<Poste>(_context);
                 return posteRepository;
             }
         }
 
-        public IGenericRepository<Priorite, Guid> PrioriteRepository
+        public IGenericRepository<Priorite> PrioriteRepository
         {
             get
             {
                 if (prioriteRepository == null)
-                    prioriteRepository = new GenericRepository<Priorite, Guid>(_context);
+                    prioriteRepository = new GenericRepository<Priorite>(_context);
                 return prioriteRepository;
             }
         }
 
-        public IGenericRepository<Role, Guid> RoleRepository
+        public IGenericRepository<Role> RoleRepository
         {
             get
             {
                 if (roleRepository == null)
-                    roleRepository = new GenericRepository<Role, Guid>(_context);
+                    roleRepository = new GenericRepository<Role>(_context);
                 return roleRepository;
             }
         }
 
-        public IGenericRepository<Statut, Guid> StatutRepository
+        public IGenericRepository<Statut> StatutRepository
         {
             get
             {
                 if (statutRepository == null)
-                    statutRepository = new GenericRepository<Statut, Guid>(_context);
+                    statutRepository = new GenericRepository<Statut>(_context);
                 return statutRepository;
             }
         }
 
-        public IGenericRepository<Tache, Guid> TacheRepository
+        public IGenericRepository<Tache> TacheRepository
         {
             get
             {
                 if (tacheRepository == null)
-                    tacheRepository = new GenericRepository<Tache, Guid>(_context);
+                    tacheRepository = new GenericRepository<Tache>(_context);
                 return tacheRepository;
             }
         }
 
-        public IGenericRepository<TypeTache, Guid> TypeTacheRepository
+        public IGenericRepository<TypeTache> TypeTacheRepository
         {
             get
             {
                 if (typeTacheRepository == null)
-                    typeTacheRepository = new GenericRepository<TypeTache, Guid>(_context);
+                    typeTacheRepository = new GenericRepository<TypeTache>(_context);
                 return typeTacheRepository;
             }
         }
 
-        public IGenericRepository<Utilisateur, Guid> UtilisateurRepository
+        public IGenericRepository<Utilisateur> UtilisateurRepository
         {
             get
             {
                 if (utilisateurRepository == null)
-                    utilisateurRepository = new GenericRepository<Utilisateur, Guid>(_context);
+                    utilisateurRepository = new GenericRepository<Utilisateur>(_context);
                 return utilisateurRepository;
             }
         }
 
-        public IGenericRepository<Ville, Guid> VilleRepository
+        public IGenericRepository<Ville> VilleRepository
         {
             get
             {
                 if (villeRepository == null)
-                    villeRepository = new GenericRepository<Ville, Guid>(_context);
+                    villeRepository = new GenericRepository<Ville>(_context);
                 return villeRepository;
             }
         }

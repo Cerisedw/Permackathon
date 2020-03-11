@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Pangathon.DAL.Entities
 {
     [Table("Adresse")]
-    public class Adresse : IAdresse<Guid>
+    public class Adresse : IAdresse
     {
         [Key]
         public Guid Id { get; set; }

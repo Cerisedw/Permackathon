@@ -1,6 +1,6 @@
 ﻿namespace Pangathon.DAL.Interfaces
 {
-    public interface IVille<TIdType> : IEntity<TIdType>
+    public interface IVille : IEntity
     {
         string Nom { get; set; }
     }

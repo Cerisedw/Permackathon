@@ -2,7 +2,7 @@
 
 namespace Pangathon.DAL.Interfaces
 {
-    public interface IAdresse<TIdType> : IEntity<TIdType>
+    public interface IAdresse : IEntity
     {
         string Rue { get; set; }
         string Numero { get; set; }

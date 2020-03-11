@@ -40,10 +40,9 @@ namespace Pangathon.Api.Controllers
         [HttpGet("getall/nom/{paramsNom}")]
         public List<UtilisateurView> FilterByNom(string paramsNom)
         {
-            List<UtilisateurView> listeUtilisateur = UtilisateurTools.listTolistV(_unitOfWork.UtilisateurRepository.Get().ToList());
+            List<UtilisateurView> listeUtilisateur = UtilisateurTools.listTolistV(_unitOfWork.UtilisateurRepository.Get(null, null, _includeString).ToList());
             List<UtilisateurView> newList = listeUtilisateur.Where(x => x.Nom == paramsNom).ToList();
             return newList;
-
         }
 
     }

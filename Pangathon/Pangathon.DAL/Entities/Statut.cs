@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Pangathon.DAL.Entities
 {
     [Table("Statut")]
-    public class Statut : IStatut<Guid>
+    public class Statut : IStatut
     {
         [Key]
         public Guid Id { get; set; }

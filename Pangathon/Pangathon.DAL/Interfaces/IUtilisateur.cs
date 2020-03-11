@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Pangathon.DAL.Interfaces
 {
-    public interface IUtilisateur<TIdType> : IEntity<TIdType>
+    public interface IUtilisateur : IEntity
     {
         string Nom { get; set; }
         string Prenom { get; set; }

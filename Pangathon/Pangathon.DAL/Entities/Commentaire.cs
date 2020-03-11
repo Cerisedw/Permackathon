@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Pangathon.DAL.Entities
 {
     [Table("Commentaire")]
-    public class Commentaire : ICommentaire<Guid>
+    public class Commentaire : ICommentaire
     {
         [Key]
         public Guid Id { get; set; }

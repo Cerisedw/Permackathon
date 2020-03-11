@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Pangathon.DAL.Interfaces
 {
-    public interface ITache<TIdType> : IEntity<TIdType>
+    public interface ITache : IEntity
     {
         string Nom { get; set; }
         string Description { get; set; }
