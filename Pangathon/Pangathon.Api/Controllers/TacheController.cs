@@ -47,18 +47,26 @@ namespace Pangathon.Api.Controllers
 
 
         [HttpPost()]
-        public void Ajout(TacheAjout tacheajout)
+        public string Ajout(TacheAjout tacheajout)
         {
-            Utilisateur u = _unitOfWork.UtilisateurRepository.GetById(Guid.Parse("ad70b45f-09a8-4a5a-8e6f-c46a4530befb"), "Entreprise,Entreprise.Adresse,Entreprise.Adresse.Ville,Poste"); // Utilisateur : Michael
-            Tache t = TacheTools.TacheAjoutToTache(tacheajout);
-            t.Createur = u;
-            t.Priorite = _unitOfWork.PrioriteRepository.Get(x => x.Nom == tacheajout.Priorite, null, "").FirstOrDefault();
-            t.Entreprise = _unitOfWork.EntrepriseRepository.Get(x => x.Nom == tacheajout.Entreprise, null, "Adresse,Adresse.Ville").FirstOrDefault();
-            t.TypeTache = _unitOfWork.TypeTacheRepository.Get(x => x.Nom == tacheajout.Type, null, "Parent").FirstOrDefault();
-            t.Statut = _unitOfWork.StatutRepository.GetById(Guid.Parse("a3419a76-b03b-4402-9756-5b4207ef7819")); // Statut 'En attente'
-            t.Id = Guid.NewGuid();
-            Tache tache = _unitOfWork.TacheRepository.Insert(t);
-            _unitOfWork.Save();
+            try
+            {
+                Utilisateur u = _unitOfWork.UtilisateurRepository.GetById(Guid.Parse("ad70b45f-09a8-4a5a-8e6f-c46a4530befb"), "Entreprise,Entreprise.Adresse,Entreprise.Adresse.Ville,Poste"); // Utilisateur : Michael
+                Tache t = TacheTools.TacheAjoutToTache(tacheajout);
+                t.Createur = u;
+                t.Priorite = _unitOfWork.PrioriteRepository.Get(x => x.Nom == tacheajout.Priorite, null, "").FirstOrDefault();
+                t.Entreprise = _unitOfWork.EntrepriseRepository.Get(x => x.Nom == tacheajout.Entreprise, null, "Adresse,Adresse.Ville").FirstOrDefault();
+                t.TypeTache = _unitOfWork.TypeTacheRepository.Get(x => x.Nom == tacheajout.Type, null, "Parent").FirstOrDefault();
+                t.Statut = _unitOfWork.StatutRepository.GetById(Guid.Parse("a3419a76-b03b-4402-9756-5b4207ef7819")); // Statut 'En attente'
+                t.Id = Guid.NewGuid();
+                Tache tache = _unitOfWork.TacheRepository.Insert(t);
+                _unitOfWork.Save();
+                return "OK";
+            }
+            catch (Exception e)
+            {
+                return e.Message;
+            }
         }
 
     }
