@@ -52,15 +52,14 @@ namespace Pangathon.Api.Controllers
         [HttpPost()]
         public string Ajout(TacheAjout tacheajout)
         {
-<<<<<<< HEAD
             try
             {
-                Utilisateur u = _unitOfWork.UtilisateurRepository.GetById(Guid.Parse("ad70b45f-09a8-4a5a-8e6f-c46a4530befb"), "Entreprise,Entreprise.Adresse,Entreprise.Adresse.Ville,Poste"); // Utilisateur : Michael
+                Utilisateur u = _unitOfWork.UtilisateurRepository.GetById(Guid.Parse("ad70b45f-09a8-4a5a-8e6f-c46a4530befb"), _includeUtilisateur); // Utilisateur : Michael
                 Tache t = TacheTools.TacheAjoutToTache(tacheajout);
                 t.Createur = u;
                 t.Priorite = _unitOfWork.PrioriteRepository.Get(x => x.Nom == tacheajout.Priorite, null, "").FirstOrDefault();
-                t.Entreprise = _unitOfWork.EntrepriseRepository.Get(x => x.Nom == tacheajout.Entreprise, null, "Adresse,Adresse.Ville").FirstOrDefault();
-                t.TypeTache = _unitOfWork.TypeTacheRepository.Get(x => x.Nom == tacheajout.Type, null, "Parent").FirstOrDefault();
+                t.Entreprise = _unitOfWork.EntrepriseRepository.Get(x => x.Nom == tacheajout.Entreprise, null, _includeEntreprise).FirstOrDefault();
+                t.TypeTache = _unitOfWork.TypeTacheRepository.Get(x => x.Nom == tacheajout.Type, null, _includeTypeTache).FirstOrDefault();
                 t.Statut = _unitOfWork.StatutRepository.GetById(Guid.Parse("a3419a76-b03b-4402-9756-5b4207ef7819")); // Statut 'En attente'
                 t.Id = Guid.NewGuid();
                 Tache tache = _unitOfWork.TacheRepository.Insert(t);
@@ -71,18 +70,6 @@ namespace Pangathon.Api.Controllers
             {
                 return e.Message;
             }
-=======
-            Utilisateur u = _unitOfWork.UtilisateurRepository.GetById(Guid.Parse("ad70b45f-09a8-4a5a-8e6f-c46a4530befb"), _includeUtilisateur); // Utilisateur : Valérie Luna
-            Tache t = TacheTools.TacheAjoutToTache(tacheajout);
-            t.Createur = u;
-            t.Priorite = _unitOfWork.PrioriteRepository.Get(x => x.Nom == tacheajout.Priorite, null, "").FirstOrDefault();
-            t.Entreprise = _unitOfWork.EntrepriseRepository.Get(x => x.Nom == tacheajout.Entreprise, null, _includeEntreprise).FirstOrDefault();
-            t.TypeTache = _unitOfWork.TypeTacheRepository.Get(x => x.Nom == tacheajout.Type, null, _includeTypeTache).FirstOrDefault();
-            t.Statut = _unitOfWork.StatutRepository.GetById(Guid.Parse("a3419a76-b03b-4402-9756-5b4207ef7819")); // Statut 'En attente'
-            t.Id = Guid.NewGuid();
-            Tache tache = _unitOfWork.TacheRepository.Insert(t);
-            _unitOfWork.Save();
->>>>>>> f9adc8cad3ab766922a55179387c8c9f9ba6cef3
         }
 
         [HttpPost("participant")]
