@@ -53,9 +53,9 @@ namespace Pangathon.Api.Tools
             };
         }
 
-        public static TacheView TacheAjoutToTacheV(TacheAjout ta)
+        public static Tache TacheAjoutToTache(TacheAjout ta)
         {
-            return new TacheView()
+            return new Tache()
             {
                 Nom = ta.Nom,
                 Description = ta.Description,

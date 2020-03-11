@@ -53,21 +53,10 @@ namespace Pangathon.Api.Controllers
             Utilisateur u = _unitOfWork.UtilisateurRepository.GetById(Guid.Parse(""));
             Tache t = TacheTools.TacheAjoutToTache(tacheajout);
             t.Createur = u;
-            List<Priorite> lp = _unitOfWork.PrioriteRepository.Get(x => x.Nom == tacheajout.Priorite, null, null).ToList();
-            foreach (Priorite p in lp)
-            {
-                t.Priorite = p;
-            }
-            List<Entreprise> le = _unitOfWork.EntrepriseRepository.Get(x => x.Nom == tacheajout.Entreprise, null, null).ToList();
-            foreach(Entreprise e in le)
-            {
-                t.Entreprise = e;
-            }
-            List<TypeTache> lt = _unitOfWork.TypeTacheRepository.Get(x => x.Nom == tacheajout.Type, null, null).ToList();
-            foreach(TypeTache tt in lt)
-            {
-                t.TypeTache = tt;
-            }
+            t.Priorite = _unitOfWork.PrioriteRepository.Get(x => x.Nom == tacheajout.Priorite, null, null).FirstOrDefault();
+            t.Entreprise = _unitOfWork.EntrepriseRepository.Get(x => x.Nom == tacheajout.Entreprise, null, null).FirstOrDefault();
+            t.TypeTache = _unitOfWork.TypeTacheRepository.Get(x => x.Nom == tacheajout.Type, null, null).FirstOrDefault();
+            t.Statut = _unitOfWork.StatutRepository.GetById(Guid.Parse(""));
             Tache tache = _unitOfWork.TacheRepository.Insert(t);
         }
 
