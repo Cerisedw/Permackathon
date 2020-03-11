@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Pangathon.DAL.Interfaces
 {
-    public interface IPriorite<TIdType> : IEntity<TIdType>
+    public interface IPriorite : IEntity
     {
         string Nom { get; set; }
         int Niveau { get; set; }

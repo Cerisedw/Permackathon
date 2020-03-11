@@ -2,7 +2,7 @@
 
 namespace Pangathon.DAL.Interfaces
 {
-    public interface ITypeTache<TIdType> : IEntity<TIdType>
+    public interface ITypeTache : IEntity
     {
         string Nom { get; set; }
         string Description { get; set; }

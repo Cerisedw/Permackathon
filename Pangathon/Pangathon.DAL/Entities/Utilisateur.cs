@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Pangathon.DAL.Entities
 {
     [Table("Utilisateur")]
-    public class Utilisateur : IUtilisateur<Guid>
+    public class Utilisateur : IUtilisateur
     {
         [Key]
         public Guid Id { get; set; }

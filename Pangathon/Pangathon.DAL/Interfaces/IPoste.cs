@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Pangathon.DAL.Interfaces
 {
-    public interface IPoste<TIdType> : IEntity<TIdType>
+    public interface IPoste : IEntity
     {
         string Nom { get; set; }
         string Description { get; set; }
