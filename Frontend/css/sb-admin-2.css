@@ -2816,6 +2816,7 @@ fieldset:disabled a.btn {
   font-size: 0.875rem;
   line-height: 1;
   border-radius: 50%;
+  margin-left:0.8rem;
 }
 
 .btn-block {

@@ -86,16 +86,21 @@ document.addEventListener('DOMContentLoaded', function(){
                 let name        = document.createElement('h2');
                 name.className='card-title';
                 
+                let btnParticipantContainer = document.createElement('div');
+                btnParticipantContainer.className = " col-3 text-right";
+
                 let btnParticipant = document.createElement('button');
-                btnParticipant.className="btn btn-primary btn-sm";
-                btnParticipant.setAttribute('data-index', myId);
                 btnParticipant.setAttribute('type', 'button');
-                btnParticipant.setAttribute('data-target', '#'+myId);
+                btnParticipant.className="text-right btn btn-primary btn-sm";
+                btnParticipant.setAttribute('data-toggle', 'modal');
+                btnParticipant.setAttribute('data-target', '#modal'+myId);
+                // btnParticipant.setAttribute('data-index', myId);
+
                 btnParticipant.innerHTML="<i class='fas fa-plus text-white'></i>";
 
                 let modalContainer = document.createElement('div');
                 modalContainer.className="modal fade";
-                modalContainer.setAttribute("id", myId);
+                modalContainer.setAttribute("id", 'modal'+myId);
                 modalContainer.setAttribute("tabindex", "-1");
                 modalContainer.setAttribute("role", "dialog");
                 modalContainer.setAttribute("aria-ladelledby", "addParticipant");
@@ -106,17 +111,26 @@ document.addEventListener('DOMContentLoaded', function(){
                 <div class="modal-dialog" role="document">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                      <h5 class="modal-title" id="exampleModalLabel">Ajouter un participant à la tâche ${titreTache}</h5>
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                       </button>
                     </div>
                     <div class="modal-body">
-                      ...
+                    <form method="POST" action="http://192.168.0.100:84/api/tache/">
+                    <div class="form-group">
+                      <label for="prenomParticipant">Titre de la tâche</label>
+                      <input type="text" class="form-control" name="Prenom" id="prenomParticipant" aria-describedby="tacheName" placeholder="Prénom qu participant">
+                    </div>
+                    <div class="form-group">
+                      <label for="nomParticipant">Description</label>
+                      <input type="text" class="form-control" name="Nom" id="nomParticipant" placeholder="Nom du participant">
                     </div>
                     <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary">Save changes</button>
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                      <button type="submit" class="btn btn-primary">Ajouter</button>
+                    </div>
+                  </form>
                     </div>
                   </div>
                 </div>`;
@@ -136,7 +150,7 @@ document.addEventListener('DOMContentLoaded', function(){
                     toDo.appendChild(item);
                 } 
                 if (permaDatabaseJSON[i].statut === 'En cours'){
-                    cardBody.appendChild(btnParticipant);
+                    cardBody.appendChild(btnParticipantContainer);
                     doing.appendChild(item);
                 } 
                 if (permaDatabaseJSON[i].statut === 'Fini'){
@@ -147,7 +161,5 @@ document.addEventListener('DOMContentLoaded', function(){
     })
     request.open('GET', requestURL, true);
     request.send();
-    
-    
     
 });
