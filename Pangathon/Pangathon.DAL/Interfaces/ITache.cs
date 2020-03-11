@@ -10,6 +10,7 @@ namespace Pangathon.DAL.Interfaces
         string Description { get; set; }
         DateTime DateCreation { get; set; }
         DateTime? DateDeadline { get; set; }
+        DateTime? DateRealisation { get; set; }
         Utilisateur Createur { get; set; }
         Priorite Priorite { get; set; }
         Statut Statut { get; set; }

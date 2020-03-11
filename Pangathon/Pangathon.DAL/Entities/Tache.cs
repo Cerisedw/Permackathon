@@ -18,6 +18,7 @@ namespace Pangathon.DAL.Entities
         [Required]
         public DateTime DateCreation { get; set; }
         public DateTime? DateDeadline { get; set; }
+        public DateTime? DateRealisation { get; set; }
         [Required]
         public Utilisateur Createur { get; set; }
         [Required]
