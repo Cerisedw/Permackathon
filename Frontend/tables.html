@@ -293,7 +293,7 @@
                               </button>
                             </div>
                             <div class="modal-body text-left">
-                              <form method="POST" action="http://192.168.0.100:84/api/tache/">
+                              <form>
                                 <div class="form-group">
                                   <label for="nomTache">Titre de la tâche</label>
                                   <input type="text" class="form-control" name="Nom" id="nomTache" aria-describedby="tacheName" placeholder="Entrez le titre de la tâche">
@@ -305,9 +305,9 @@
                                 <div class="form-group">
                                   <label for="tachePriorite">Priorité</label>
                                   <select class="form-control" name="Priorite" id="tachePriorite">
-                                    <option>Normale</option>
-                                    <option>Importante</option>
-                                    <option>Urgente</option>
+                                    <option value="Normal">Normale</option>
+                                    <option value="Important">Importante</option>
+                                    <option value="Urgent">Urgente</option>
                                   </select>
                                 </div>
                                 <div class="form-group">
@@ -317,19 +317,20 @@
                                 <div class="form-group">
                                   <label for="tachePriorite">Type de tâche</label>
                                   <select class="form-control" name="Type" id="tachePriorite">
-                                    <option>Production - R&amp;D</option>
+                                    <option value="Production" >Production</option>
+                                    <option >Production - R&amp;D</option>
                                     <option>Production - EAT</option>
                                     <option>Production - GROW</option>
                                     <option>Production - LEARN</option>
                                     <option>Entretien et travaux</option>
-                                    <option>GRH</option>
+                                    <option  value="GRH">GRH</option>
                                     <option>Gestion</option>
                                     <option>Communication</option>
                                   </select>
                                 </div>
                                 <div class="modal-footer">
                                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                                  <button type="submit" class="btn btn-primary">Ajouter</button>
+                                  <button type="button" id="btngo" class="btn btn-primary">Ajouter</button>
                                 </div>
                               </form>
                             </div>
@@ -416,6 +417,7 @@
           <!-- Custom scripts for all pages-->
           <script src="js/sb-admin-2.min.js"></script>
           <script src="js/data.js"></script>
+          <script src="js/sendNewTask.js"></script>
           
           <!-- Page level plugins -->
           <script src="vendor/datatables/jquery.dataTables.min.js"></script>
