@@ -109,7 +109,7 @@
           </form>
 
           <!-- Topbar Navbar -->
-          <ul class="navbar-nav ml-auto">
+          <ul class="navbar-nav ml-auto" id="deleteMe">
 
             <!-- Nav Item - Search Dropdown (Visible Only XS) -->
             <li class="nav-item dropdown no-arrow d-sm-none">
@@ -241,30 +241,28 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small" id="hardusernamecopy"><a href="login.html" class="mr-2 d-none d-lg-inline text-gray-600 small">Identifiez-vous</a></span>
+                <span id = "username" class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
                 <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
               </a>
               <!-- Dropdown - User Information -->
-              <div id ="deleteMe">
-                <div class="dropdown-menu dropdown-menu-right  animated--grow-in" aria-labelledby="userDropdown">
-                  <a class="dropdown-item" href="#">
-                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                    Profile
-                  </a>
-                  <a class="dropdown-item" href="#">
-                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                    Settings
-                  </a>
-                  <a class="dropdown-item" href="#">
-                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                    Activity Log
-                  </a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                    Logout
-                  </a>
-                </div>
+              <div class="dropdown-menu dropdown-menu-right  animated--grow-in" aria-labelledby="userDropdown">
+                <a class="dropdown-item" href="#">
+                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Profile
+                </a>
+                <a class="dropdown-item" href="#">
+                  <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Settings
+                </a>
+                <a class="dropdown-item" href="#">
+                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Activity Log
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Logout
+                </a>
               </div>
             </li>
 
@@ -276,13 +274,13 @@
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
+          <div class="d-sm-flex align-items-center justify-content-between mb-4" id ="welcomeDiv">
+            <a href="./login.html">Identifiez-vous</a>
+          </div>
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-            <a href="#" class="d-none d-sm-inline-block btn  btn-primary -sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
-          </div>
-          <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h2 class="h3 mb-0 text-gray-800" id="welcometitle"></h2>
+            <h1 class="h3 mb-0 text-gray-800">Graphiques</h1>
+            <a href="#" class="d-none d-sm-inline-block btn  btn-primary -sm"><i class="fas fa-download fa-sm text-white-50"></i> Générer le rapport trimestriel</a>
           </div>
 
           <!-- Content Row -->
@@ -546,7 +544,7 @@
         <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.html">Logout</a>
+          <a class="btn btn-primary" href="logout.html">Logout</a>
         </div>
       </div>
     </div>
@@ -562,7 +560,7 @@
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
   <script src="js/data.js"></script>
-  <script src ="js/loginCheck.js"></script>
+  <script src = "js/loginCheck.js"></script>
 
   <!-- Page level plugins -->
   <script src="vendor/chart.js/Chart.min.js"></script>

@@ -1,10 +1,12 @@
-let nameSpan = document.querySelector("#hardusernamecopy");
-let dropdownEl = document.querySelector("#deleteMe");
-nameSpan.innerText = "";
-if(localStorage.getItem("user")){
-    nameSpan.innerText = localStorage.getItem("user");
+let welcomeDiv = document.getElementById("welcomeDiv");
+let usernameSpan = document.getElementById("username");
+let deleteMe= document.getElementById('deleteMe');
+if(localStorage.getItem('user')){
+    welcomeDiv.innerHTML = "<h2> Bienvenue, " + localStorage.getItem('user') + " !";
+    usernameSpan.innerText = localStorage.getItem('user');
+    
+
 }
 else {
-    nameSpan.innerHTML = "";
-
+    deleteMe.style.display = 'none';
 }
