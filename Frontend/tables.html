@@ -296,15 +296,15 @@
                               <form method="POST" action="http://192.168.0.100:84/api/tache/">
                                 <div class="form-group">
                                   <label for="nomTache">Titre de la tâche</label>
-                                  <input type="text" class="form-control" id="nomTache" aria-describedby="tacheName" placeholder="Entrez le titre de la tâche">
+                                  <input type="text" class="form-control" name="Nom" id="nomTache" aria-describedby="tacheName" placeholder="Entrez le titre de la tâche">
                                 </div>
                                 <div class="form-group">
                                   <label for="tacheDesc">Description</label>
-                                  <input type="text" class="form-control" id="tacheDesc" placeholder="Description de la tâche">
+                                  <input type="text" class="form-control" name="Description" id="tacheDesc" placeholder="Description de la tâche">
                                 </div>
                                 <div class="form-group">
                                   <label for="tachePriorite">Priorité</label>
-                                  <select class="form-control" id="tachePriorite">
+                                  <select class="form-control" name="Priorite" id="tachePriorite">
                                     <option>Normale</option>
                                     <option>Importante</option>
                                     <option>Urgente</option>
@@ -312,12 +312,15 @@
                                 </div>
                                 <div class="form-group">
                                   <label for="datepicker">Deadline si nécessaire</label>
-                                  <input type="text" class="form-control" id="datepicker">
+                                  <input type="text" class="form-control" name="DateDeadline" id="datepicker">
                                 </div>
                                 <div class="form-group">
                                   <label for="tachePriorite">Type de tâche</label>
-                                  <select class="form-control" id="tachePriorite">
-                                    <option>Production</option>
+                                  <select class="form-control" name="Type" id="tachePriorite">
+                                    <option>Production - R&amp;D</option>
+                                    <option>Production - EAT</option>
+                                    <option>Production - GROW</option>
+                                    <option>Production - LEARN</option>
                                     <option>Entretien et travaux</option>
                                     <option>GRH</option>
                                     <option>Gestion</option>
@@ -325,7 +328,7 @@
                                   </select>
                                 </div>
                                 <div class="modal-footer">
-                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
                                   <button type="submit" class="btn btn-primary">Ajouter</button>
                                 </div>
                               </form>
