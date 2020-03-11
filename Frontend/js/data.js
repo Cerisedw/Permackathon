@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function(){
                     <form method="POST" action="http://192.168.0.100:84/api/tache/">
                     <div class="form-group">
                       <label for="prenomParticipant">Titre de la tâche</label>
-                      <input type="text" class="form-control" name="Prenom" id="prenomParticipant" aria-describedby="tacheName" placeholder="Prénom qu participant">
+                      <input type="text" class="form-control" name="Prenom" id="prenomParticipant" aria-describedby="tacheName" placeholder="Prénom du participant">
                     </div>
                     <div class="form-group">
                       <label for="nomParticipant">Description</label>
