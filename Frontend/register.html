@@ -34,7 +34,7 @@
               <div class="text-center">
                 <h1 class="h4 text-gray-900 mb-4">Créer un compte !</h1>
               </div>
-              <form class="user" method="post" action="http://192.168.0.100:84/api/utilisateur/register">
+              <form class="user" method="post" action="./js/sendRegister.js">
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
                     <input type="text" class="form-control form-control" id="exampleFirstName" placeholder="Prenom" name="Prenom">
@@ -71,9 +71,9 @@
                 </div>
                 <div class="form-group">
                   <label for="exampleInputImage">Uploadez une photo de profil</label>
-                  <input type="file" class="form-control-file-lg form-control" id="exampleInputImage"name="Image">
+                  <input type="file" class="form-control-file-lg form-control" id="exampleInputImage" name="Image">
                 </div>
-                <button type="submit" class="btn btn-primary btn-block">
+                <button type="submit" class="btn btn-primary btn btn-block">
                   Register Account
                 </button>
               </form>
