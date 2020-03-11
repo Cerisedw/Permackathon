@@ -60,7 +60,7 @@ namespace Pangathon.Api.Tools
                 Nom = ta.Nom,
                 Description = ta.Description,
                 DateCreation = DateTime.Now,
-                                
+                DateDeadline = ta.DateDeadLine                                
             };
         }
 
