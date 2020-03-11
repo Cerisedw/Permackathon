@@ -28,6 +28,7 @@ namespace Pangathon.Api.Tools
             };
         }
 
+    
 
         public static TacheView TacheToTacheV(Tache t)
         {
@@ -49,6 +50,17 @@ namespace Pangathon.Api.Tools
                 Entreprise = EntrepriseTools.EnToEnV(t.Entreprise),
                 Type = TypeTools.tToTV(t.TypeTache),
                 Participants = UtilisateurTools.listTolistV(lu),
+            };
+        }
+
+        public static TacheView TacheAjoutToTacheV(TacheAjout ta)
+        {
+            return new TacheView()
+            {
+                Nom = ta.Nom,
+                Description = ta.Description,
+                DateCreation = DateTime.Now,
+                                
             };
         }
 
